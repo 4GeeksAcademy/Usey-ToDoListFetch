@@ -38,7 +38,7 @@ const Home = () => {
 	};
 
 	const addItem = (newItem) => {
-		fetch('https://playground.4geeks.com/todo/todos', {
+		fetch('https://playground.4geeks.com/todo/todos/usey', {
 			method: 'POST',
 			body: JSON.stringify(
 				{
@@ -47,7 +47,7 @@ const Home = () => {
 				}
 			),
 			headers: {
-				'content-type': 'application/json'
+				'Content-type': 'application/json'
 			}
 		})
 			.then(results => {
