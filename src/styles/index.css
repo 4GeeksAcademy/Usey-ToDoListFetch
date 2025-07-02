@@ -1,11 +1,242 @@
-/* 
+/* General Body and Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient to bottom, #fde9ea, #f9d2d2; /* Soft gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.page {
+    background-color: #ffffff; /* White background for the main content area */
+    border-radius: 25px; /* Softer corners for the main page container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 40px;
+    width: 100%;
+    max-width: 500px; /* Max width for better readability on larger screens */
+    text-align: center;
+}
 
-*/
+h1 {
+    color: #ff6f61; /* Light coral for the heading */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* To-Do List Container */
+#toDoList {
+    background-color: #fff0f5; /* Light pink background for the list area */
+    border-radius: 20px; /* Soft radius for the list container */
+    padding: 25px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow */
+}
+
+/* Add Line (Input and Add Button) */
+#addLine {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#inputField {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 2px solid #ffadad; /* Light pink border */
+    border-radius: 15px; /* Soft radius for input field */
+    font-size: 1.1em;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#inputField::placeholder {
+    color: #ffadad;
+}
+
+#inputField:focus {
+    border-color: #ff6f61; /* Light coral on focus */
+}
+
+#addButton {
+    background-color: #ffadad; /* Light pink button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px; /* Soft radius for button */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addButton:hover {
+    background-color: #ff6f61; /* Light coral on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+#addButton:active {
+    transform: translateY(0);
+}
+
+/* List Items */
+.list {
+    margin-bottom: 20px;
+}
+
+#item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* White background for each task item */
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Soft radius for task items */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for items */
+    transition: transform 0.2s ease;
+}
+
+#item:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+#label {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1em;
+    color: #555;
+    word-break: break-word; /* Prevents long words from overflowing */
+}
+
+.completed-label {
+    text-decoration: line-through;
+    color: #a0a0a0; /* Lighter color for completed tasks */
+}
+
+#complete {
+    background-color: #d4edda; /* Soft green for complete button */
+    color: #388e3c; /* Darker green text */
+    border: 1px solid #c3e6cb;
+    padding: 8px 15px;
+    border-radius: 10px; /* Soft radius */
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#complete:hover {
+    background-color: #c3e6cb;
+}
+
+.completed-btn {
+    background-color: #f0f0f0; /* Greyed out for completed state */
+    color: #888;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    cursor: default; /* No pointer cursor for completed */
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+.X {
+    background-color: #ffadad; /* Light pink for delete button */
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circular delete button */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.X:hover {
+    background-color: #ff6f61; /* Light coral on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Bottom Line (Item Counter and Filter Button) */
+#bottomLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #ffe8e8; /* Light pink separator */
+}
+
+#itemCounter {
+    color: #888;
+    font-size: 0.9em;
+}
+
+#filterBtn {
+    background-color: #ffadad; /* Light pink filter button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px; /* Soft radius */
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#filterBtn:hover {
+    background-color: #ff6f61; /* Light coral on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .page {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #addLine {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #addButton {
+        width: 100%;
+    }
+
+    #item {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    #label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #complete {
+        margin-right: 5px;
+    }
+
+    #bottomLine {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
